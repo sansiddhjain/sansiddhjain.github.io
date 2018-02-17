@@ -1,6 +1,6 @@
 ## Hi there!
 
-I am a 4th year Dual Degree Undergraduate at Indian Institute of Technology (IIT) Delhi, majoring in Computer Science & Mechanical Engineering. 
+I am a 4th year Integrated Masters at Indian Institute of Technology (IIT) Delhi, majoring in Industrial Engineering & Computer Science. 
 
 Here you can find a more detailed summary of some of my projects, and some of my coursework.
 
