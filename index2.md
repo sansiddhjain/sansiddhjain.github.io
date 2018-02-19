@@ -1,10 +1,5 @@
----
-layout:     post
-title:      Developing an Aggregate Metric for Measuring District Court Performance
-date:       2018-02-18
-summary:   
-categories: jekyll pixyll
----
+
+# Developing an Aggregate Metric for Measuring District Court Performance
 
 As a part of my undergraduate thesis, I have been working on collecting a large sample of court case summaries of Indian district courts. While collecting the data is a ~~challenging task~~ nightmare, and deserves a blog post in itself, let that be reserved for some other time.
 
