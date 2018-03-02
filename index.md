@@ -4,7 +4,7 @@ I am a 4th year Integrated Masters at Indian Institute of Technology (IIT) Delhi
 
 Here you can find a more detailed summary of some of my projects, and some of my coursework.
 
-- Read more about my [Undergraduate Thesis](index2.md)
+- Read more about my [Undergraduate Thesis](undergrad_thesis/index2.md)
 
 Oh, and apart from engineering, I am an avid reader, with a particular soft spot for The Caravan Magazine, The Guardian's Long Read, and Asterix Comics. I have recently taken to running for recreation, and I try my best to do it regularly, despite Delhi's atmosphere's evil plans to stop me from doing so. Along with it has the habit of telling people to [stop eating so much sugar](http://www.nytimes.com/2011/04/17/magazine/mag-17Sugar-t.html). 
 
