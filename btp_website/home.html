@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Map of States of India</title>
+	<title>Map of Districts of India</title>
 </head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,12 +13,6 @@
 
 <script type="text/javascript" src="material_design_table.js"></script>
 <link rel="stylesheet" type="text/css" href="material_design_table.css">
-
-<link rel="stylesheet" type="text/css" href="library/leaflet/leaflet.css">
-<script type="text/javascript" src="library/leaflet/leaflet.js"></script>
-<script src="library/leaflet/leaflet.hotline.js"></script>
-
-<script src="GeoJSON_Files/gadm_states_time_bw_hearings.geojson"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -32,6 +26,8 @@
 		height: 600px; 
 		width: 1000px;
 		margin: auto;
+		/*text-align: center;*/
+		font: Helvetica, sans-serif;
 	}
 	.info {
 	    padding: 6px 8px;
@@ -157,16 +153,16 @@
 			<!-- <li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Rankings<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="rankings1.html">by Zero Day Disposals</a></li>
-					<li><a href="rankings2.html">by KL Divergence </a></li>
-					<li><a href="rankings3.html">by Coeffecient of Variation</a></li>
-					<li><a href="rankings4.html">by Tail Bound (3 months)</a></li>
-					<li><a href="rankings5.html">by Tail Bound (6 months)</a></li>
-					<li><a href="rankings6.html">by Tail Bound (1 year)</a></li>
-					<li><a href="rankings7.html">by Tail Bound (3 years)</a></li>
-					<li><a href="rankings8.html">by Mean Disposal Time</a></li>
-					<li><a href="rankings9.html">by Average Number of Hearings</a></li>
-					<li><a href="rankings10.html">by Average Time between Hearings</a></li>
+					<li><a href="../../rankings1.html">by Zero Day Disposals</a></li>
+					<li><a href="../../rankings2.html">by KL Divergence </a></li>
+					<li><a href="../../rankings3.html">by Coeffecient of Variation</a></li>
+					<li><a href="../../rankings4.html">by Tail Bound (3 months)</a></li>
+					<li><a href="../../rankings5.html">by Tail Bound (6 months)</a></li>
+					<li><a href="../../rankings6.html">by Tail Bound (1 year)</a></li>
+					<li><a href="../../rankings7.html">by Tail Bound (3 years)</a></li>
+					<li><a href="../../rankings8.html">by Mean Disposal Time</a></li>
+					<li><a href="../../rankings9.html">by Average Number of Hearings</a></li>
+					<li><a href="../../rankings10.html">by Average Time between Hearings</a></li>
 				</ul>
 			</li> -->
 			<li><a href="faq.html">FAQ</a></li>
@@ -175,182 +171,31 @@
 	</div>
 </nav>
 
-<h1>Average Time Between Hearings for All States</h1>
+<h1>Welcome!</h1>
 
 <div id="map">
-	<script type="text/javascript">
-		function getColor(d) {
-			// if (d > 414.43146310035502) {d = 414.43146310035502;}
-			// if (d < 194.130275133) {d = 194.130275133;}
-			
-			// var percentColors = [
-			// 	{ pct: 69.916257727377882, color: { r: 0x00, g: 0xff, b: 0 } },
-			// 	{ pct: 240.022862286, color: { r: 0xff, g: 0xff, b: 0 } },
-			// 	{ pct: 480.04572457290158, color: { r: 0xff, g: 0x00, b: 0 } } ];
-			
-		    
-			var percentColors = [
-				{ pct: 1, color: { r: 0x00, g: 0xff, b: 0 } },
-				{ pct: 12, color: { r: 0xff, g: 0xff, b: 0 } },
-				{ pct: 25, color: { r: 0xff, g: 0x00, b: 0 } } ];
-
-			var i = 0;
-		    for (i = 1; i < percentColors.length - 1; i++) {
-		        if (d < percentColors[i].pct) {
-		            break;
-		        }
-		    }
-		 	var lower = percentColors[i - 1];
-		    var upper = percentColors[i];
-		    var l = (d - lower.pct)/(upper.pct - lower.pct);
-		    var pctLower = 1 - l;
-		    var pctUpper = l;
-		    var color = {
-		        r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
-		        g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
-		        b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
-		    };
-		    return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
-		}
-
-		function style(feature) {
-	        return {
-		        fillColor: getColor(feature.properties.rank),
-		        weight: 2,
-		        opacity: 1,
-		        color: 'white',
-		        dashArray: '3',
-		        fillOpacity: 0.7
-		    };
-		}
-
-		function convert_(s) {
-			s = s.toLowerCase();
-			s = s.replace(/ /g, '_');
-			return s;
-		}
-
-		function onClick(e) {
-			var layer = e.target;
-
-			window.location.href = 'states_pages/'+convert_(layer.feature.properties.NAME_1)+'/'+convert_(layer.feature.properties.NAME_1)+'_visualisations_kl.html';
-		}
-
-		function highlightFeature(e) {
-		    var layer = e.target;
-
-		    layer.setStyle({
-		        weight: 5,
-		        color: '#666',
-		        dashArray: '',
-		        fillOpacity: 0.7
-		    });
-
-		    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-		        layer.bringToFront();
-		    }
-		    info.update(layer.feature.properties);
-		}
-
-		function resetHighlight(e) {
-		    districts_layer.resetStyle(e.target);
-		    info.update();
-		}
-
-		function onEachFeature(feature, layer) {
-		  	layer.on({
-		        mouseover: highlightFeature,
-		        mouseout: resetHighlight,
-		        click: onClick
-		    });
-		}
-
-		function humanise (diff) {
-			var str = '';
-			var values = [[' year', 365], [' month', 30], [' day', 1]];
-
-			for (var i=0;i<values.length;i++) {
-				var amount = Math.floor(diff / values[i][1]);
-			    if (amount >= 1) {
-			       str += amount + values[i][0] + (amount > 1 ? 's' : '') + ' ';
-			       diff -= amount * values[i][1];
-			    }
-			}
-			return str;
-		}
-
-		function toInt(n){ return Math.round(Number(n)); };
-
-		var map_var = L.map('map', {
-		    center: L.latLng(22.69, 77.97),
-		    zoom: 5
-		});
-		var info = L.control();
-		info.onAdd = function (map) {
-		    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-		    this.update();
-		    return this._div;
-		};
-
-		// method that we will use to update the control based on feature properties passed
-		info.update = function (props) {
-			this._div.innerHTML = '<h4>Avg Time Between Hearings</h4>' +  (props ?
-				'<b>' + props.NAME_1 + '</b><br />' + humanise(toInt(props.density)) + '<br /><b>Rank - </b>' + props.rank + '/25'
-		        : 'Hover over a district');
-		};
-
-		var districts_layer = L.geoJson(india_states, {
-			style: style,
-			onEachFeature: onEachFeature
-		}).addTo(map_var);
-
-		info.addTo(map_var);
-
-		var legend = L.control({position: 'bottomright'});
-
-		legend.onAdd = function (map) {
-
-			var div = L.DomUtil.create('div', 'info legend'),
-				colors = ['00FF00', '32FF00', '65FF00', '99FF00', 'CCFF00', 'FFFF00', 'FFCC00', 'FF9900', 'FF6600', 'FF3200', 'FF0000'];
-
-			for (var i = 0; i < colors.length; i++) {
-				if (i == 0) {
-					div.innerHTML +=
-						'<i style="background:#' + colors[i] + '"> '+toInt(29.573747274) +' days </i> ';
-					}
-				else if (i == colors.length-1) {
-					div.innerHTML +=
-						'<i style="background:#' + colors[i] + '"> '+toInt(112.98120086) +' days </i> ';
-					}
-				else {
-					div.innerHTML +=
-						'<i style="background:#' + colors[i] + '">-</i> ';
-				}
-			}
-
-			return div;
-		};
-
-		legend.addTo(map_var);
-
-		var snippet = L.control({position: 'bottomleft'});
-
-		snippet.onAdd = function (map) {
-
-			var div = L.DomUtil.create('div', 'info');
-
-			div.innerHTML = '<h6>National Average</h6>' +
-				'<b>'+ humanise(toInt(53.6021427733)) + '</b><br />' +
-				'<h6>Best State</h6>' +
-				'<b>Sikkim </b> -  '+ humanise(toInt(29.573747274)) + ' <br />' +
-				'<h6>Worst State</h6>' +
-				'<b>Karnataka </b> -  '+ humanise(toInt(112.98120086)) + ' <br />';
-			return div;
-		};
-
-		snippet.addTo(map_var);
-
-	</script>
+	<br><br>
+	We have scraped a large summary of court case summaries from several Indian district courts. This website presents visualisations on some of the analyses we performed.
+	<br><br>
+	States and districts were analysed across 9 different metrics. They are - 
+	<br>
+	<ul>
+	<li><i>Mean Case Duration Time</i> - The average time (in days) between the first and last hearings</li>
+	<li><i>Coefficient of Variation</i> - Ratio of standard deviation and mean, of case duration time</li>
+	<li><i>Zero Day Disposal Percentage</i> - Percentage of cases disposed on the first hearing itself</li>
+	<li><i>Percentage Tail Bounds</i> - Percentage of cases taking more than X units of time, where X can be 3 months, 6 months, etc.</li>
+	<li><i>Average Number of Hearings</i></li>
+	<li><i>Average Time Between Hearings</i></li>
+	</ul>
+	<br>
+	For all districts, additionally, KL Divergence was used to encompass performance across all above metrics, and come up with an aggregate score. 
+	<br><br>
+	<i>National - States</i> pane shows you visualisations across all states for each metric. <i>National - Districts</i> pane shows similar visualisations across all districts, in addition to a visualisation of KL divergence. 
+	<br><br>
+	<i>States</i> pane takes you to the page of an individual state, where you can view similar visualisations focused on that state itself.
+	<br><br>
+	Clicking on a particular district takes you to its individual page, where its analyses is tabulated.
+	<br><br>
 </div>
 </body>
 </html>
