@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Single District Visualize</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="library/material_design_table.js"></script>
+<link rel="stylesheet" type="text/css" href="library/material_design_table.css">
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<script type="text/javascript" src="library/plotly-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+<style type="text/css">
+	#hist { 
+		height: 300px;
+		width: 450px;
+		margin: auto;
+	}
+	#map { 
+		height: 500px;
+		width: 500px;
+	 }
+	 #main-table {
+	 	margin: auto;
+	 }
+	.info {
+	    padding: 6px 8px;
+	    font: 14px/16px Arial, Helvetica, sans-serif;
+	    background: white;
+	    background: rgba(255,255,255,0.8);
+	    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	    border-radius: 5px;
+	}
+	.info h4 {
+	    margin: 0 0 5px;
+	    color: #777;
+	}
+	.info h6 {
+	    margin: 0 0 2px;
+	    color: #777;
+	}
+	.faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+    h1 {
+    	margin: 15px auto;
+    	text-align: center;
+    }
+    h4 {
+    	margin: 10px auto;
+    	text-align: center;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072"; /*glyphicon glyphicon-chevron-righe072" "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
+
+<body>
+<section class="w3-container w3-center" style="max-width:2000px">
+		<h2 class="w3-wide">Indian Legal Dataset Analysis</h2>
+		<p class="w3-opacity"><i>Indian Institute of Technology, Delhi</i></p>
+</section> 
+
+<!-- Navigation -->
+ <nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		
+		<ul class="nav navbar-nav">
+			<li class="dropdown active">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">National<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="districts_visualisations_kl.html">KL Divergence</a></li>
+					<li><a href="districts_visualisations_mean.html">Mean Disposal Time</a></li>
+					<li><a href="districts_visualisations_std.html">Std Dev Disposal Time</a></li>
+					<li><a href="districts_visualisations_zero.html">Zero Day Disposal Percentage</a></li>
+					<li><a href="districts_visualisations_tail_3mon.html">Tail Bounds - 3 months</a></li>
+					<li><a href="districts_visualisations_tail_6mon.html">Tail Bounds - 6 months</a></li>
+					<li><a href="districts_visualisations_tail_1yr.html">Tail Bounds - 1 year</a></li>
+					<li><a href="districts_visualisations_tail_3yr.html">Tail Bounds - 3 years</a></li>	
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">States<span class="caret"></span></a>
+				<ul class="dropdown-menu scrollable-menu" role="menu">
+					<li><a href="#">Andhra Pradesh</a></li>
+					<li><a href="#">Assam</a></li>
+					<li><a href="#">Bihar</a></li>
+					<li><a href="#">Chattisgarh</a></li>
+					<li><a href="#">Delhi</a></li>
+					<li><a href="#">Goa</a></li>
+					<li><a href="#">Gujarat</a></li>
+					<li><a href="#">Harayana</a></li>
+					<li><a href="#">Himachal Pradesh</a></li>
+					<li><a href="#">Jammu and Kashmir</a></li>
+					<li><a href="#">Jharkhand</a></li>
+					<li><a href="#">Karnataka</a></li>
+					<li><a href="#">Kerala</a></li>
+					<li><a href="#">Lakshwadeep</a></li>
+					<li><a href="#">Madhya Pradesh</a></li>
+					<li><a href="#">Maharashtra</a></li>
+					<li><a href="#">Odisha</a></li>
+					<li><a href="#">Punjab</a></li>
+					<li><a href="#">Rajasthan</a></li>
+					<li><a href="#">Sikkim</a></li>
+					<li><a href="#">Tamil Nadu</a></li>
+					<li><a href="#">Telangana</a></li>
+					<li><a href="#">Tripura</a></li>
+					<li><a href="#">Uttarakhand</a></li>
+					<li><a href="#">Uttar Pradesh</a></li>
+					<li><a href="#">West Bengal</a></li>
+				</ul>
+			</li>
+			<li><a href="compare.html">Compare</a></li>
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Rankings<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="rankings1.html">by Zero Day Disposals</a></li>
+					<li><a href="rankings2.html">by KL Divergence </a></li>
+					<li><a href="rankings3.html">Ranking 3</a></li>
+				</ul>
+		
+			</li>
+			<li><a href="faq.html">FAQ</a></li>
+			<li><a href="aboutus.html">About Us</a></li>
+		</ul>
+	</div>
+</nav> 
+<h1>Salient Information on Patna, Bihar</h1>
+<table id="main-table">
+<tr>
+	<td>
+		<h4>Histogram of Case Duration Time</h4>
+		<div id="hist">
+		<!-- <div id="top" style="margin-left:80px;">
+		    <button>Density</button>
+		</div>
+		<div id="bottom" style="margin-left:80px;">
+		    <button>Count</button>
+		</div> --></div>
+		<script type="text/javascript">
+			Plotly.d3.csv('data/State8Dist1.csv', function(rows){
+			    // var trace = {
+			    //   type: "scatter",                    // set the chart type
+			    //   mode: "lines",                      // connect points with lines
+			    //   x: rows.map(function(row){          // set the x-data
+			    //     return row['Mid'];
+			    //   }),
+			    //   y: rows.map(function(row){          // set the x-data
+			    //     return row['Count'];
+			    //   }),
+			    //   line: {                             // set the width of the line.
+			    //     width: 1
+			    //   },
+			    // };
+
+			    var trace = {
+			      x: rows.map(function(row){          // set the x-data
+			        return row['Disposal_time'];
+			      }),
+			      type: "histogram",                    // set the chart type
+			      histnorm: 'probability',
+			    };
+
+			    // var trace2 = {
+			    //   x: rows.map(function(row){          // set the x-data
+			    //     return row['Disposal_time'];
+			    //   }),
+			    //   type: "histogram",                    // set the chart type
+			    //   // histnorm: 'probability',
+			    // };
+
+			    var layout = {
+			      yaxis: {title: "Probability Density"},       // set the y axis title
+			      xaxis: {title: "Number of Days"},
+			      margin: {                           // update the left, bottom, right, top margin
+			        l: 50, b: 50, r: 10, t: 20
+			      }
+			    };
+
+			    var data = [trace];
+
+			    Plotly.newPlot('hist', data, layout, {showLink: false});
+
+			    // $('.hideshow button').click(function(){
+				   //  var btn_id = this.parentNode.id,
+				   //      data_index = ( btn_id === 'top' ) ? 0 : 1,
+				   //      myDiv = document.getElementById("myDiv"),
+				   //      visible = myDiv.data[data_index].visible;
+				  
+				   //  if( visible === undefined ) visible = true;
+				  
+				   //  Plotly.restyle("hist", 'visible', !visible, data_index);
+			    // Plotly.plot(document.getElementById('hist'), [trace], layout, {showLink: false});
+			});
+		 	//   var trace1 = {
+			//   x: [1, 2, 3, 4],
+			//   y: [10, 15, 13, 17],
+			//   mode: 'markers',
+			//   name: 'Scatter'
+			// };
+
+			// var trace2 = {
+			//   x: [2, 3, 4, 5],
+			//   y: [16, 5, 11, 9],
+			//   mode: 'lines',
+			//   name: 'Lines'
+			// };
+
+			// var trace3 = {
+			//   x: [1, 2, 3, 4],
+			//   y: [12, 9, 15, 12],
+			//   mode: 'lines+markers',
+			//   name: 'Scatter + Lines'
+			// };
+
+			// var data = [ trace1, trace2, trace3 ];
+
+			// var layout = {
+			//   title:'Adding Names to Line and Scatter Plot'
+			// };
+
+			// Plotly.newPlot('hist', data, layout);
+			
+		</script>
+	</td>
+	<td>
+		<div id="demo1">
+			<!-- <h2>Table of my other Material Design works (list was updated 08.2015)</h2> -->
+			
+			<!-- Responsive table starts here -->
+			<!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+			<div class="table-responsive-vertical shadow-z-1">
+				<table id="table" class="table table-hover table-mc-light-blue">
+					<thead>
+						<tr>
+							<th>Parameter</th>
+							<th>Value</th>
+							<th>Rank</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-title="ID">KL Value</td>
+							<td data-title="Name">0.082</td>
+							<td data-title="Status">206/256</td>
+						</tr>
+						<tr>
+							<td data-title="ID">Mean Disposal Time</td>
+							<td data-title="Name">7 months 2 days</td>
+							<td data-title="Status">159/256</td>
+						</tr>
+						<tr>
+							<td data-title="ID">Std Dev Disposal Time</td>
+							<td data-title="Name">6 months 29 days</td>
+							<td data-title="Status">173/256</td>
+						</tr>
+						<tr>
+							<td data-title="ID">Zero Day Disposal Percentage</td>
+							<td data-title="Name">10.03%</td>
+							<td data-title="Status">208/255</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div id="demo2">
+			<div class="table-responsive-vertical shadow-z-1">
+				<table id="table" class="table table-hover table-mc-red">
+					<thead>
+						<tr>
+							<th>Tail Bound</th>
+							<th>Percentage of Cases Taking More Time</th>
+							<th>Rank</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-title="ID">3 months</td>
+							<td data-title="Name">74.4%</td>
+							<td data-title="Status">241/256</td>
+						</tr>
+						<tr>
+							<td data-title="ID">6 months</td>
+							<td data-title="Name">60.21%</td>
+							<td data-title="Status">231/256</td>
+						</tr>
+						<tr>
+							<td data-title="ID">1 year</td>
+							<td data-title="Name">43.32%</td>
+							<td data-title="Status">237/256</td>
+						</tr>
+						<tr>
+							<td data-title="ID">3 years</td>
+							<td data-title="Name">10.05%</td>
+							<td data-title="Status">212/256</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</td>
+	<td>
+		<div id = "demo3">
+			<div class="table-responsive-vertical shadow-z-1">
+				<table id="table" class="table table-hover table-mc-green">
+					<thead>
+						<tr>
+							<th>Casetype</th>
+							<th>Percentage of Cases</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-title="ID">MISC. CIVIL APPEAL</td>
+							<td data-title="Name">19.34%</td>
+						</tr>
+						<tr>
+							<td data-title="ID">LAND REF.</td>
+							<td data-title="Name">15.97%</td>
+						</tr>
+						<tr>
+							<td data-title="ID">CLAIM CASES</td>
+							<td data-title="Name">11.57%</td>
+						</tr>
+						<tr>
+							<td data-title="ID">Indian Penal Code (IPC)</td>
+							<td data-title="Name">6.60%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</td>
+</tr>	
+</table>
+	<!-- Table Constructor change table classes, you don't need it in your project -->
+	<!-- <div style="width: 45%; display: inline-block; vertical-align: top">
+	<h2>Table Constructor</h2>
+	<p>
+		<label for="table-bordered">Style: bordered</label>
+		<select id="table-bordered" name="table-bordered">
+			<option selected value="">No</option>
+			<option value="table-bordered">Yes</option>
+		</select>
+	</p>
+	<p>
+		<label for="table-striped">Style: striped</label>
+		<select id="table-striped" name="table-striped">
+			<option selected value="">No</option>
+			<option value="table-striped">Yes</option>
+		</select>
+	</p>
+	<p>
+		<label for="table-hover">Style: hover</label>
+		<select id="table-hover" name="table-hover">
+			<option value="">No</option>
+			<option selected value="table-hover">Yes</option>
+		</select>
+	</p>
+	<p>
+		<label for="table-color">Style: color</label>
+		<select id="table-color" name="table-color">
+			<option value="">Default</option>
+			<option value="table-mc-red">Red</option>
+			<option value="table-mc-pink">Pink</option>
+			<option value="table-mc-purple">Purple</option>
+			<option value="table-mc-deep-purple">Deep Purple</option>
+			<option value="table-mc-indigo">Indigo</option>
+			<option value="table-mc-blue">Blue</option>
+			<option selected value="table-mc-light-blue">Light Blue</option>
+			<option value="table-mc-cyan">Cyan</option>
+			<option value="table-mc-teal">Teal</option>
+			<option value="table-mc-green">Green</option>
+			<option value="table-mc-light-green">Light Green</option>
+			<option value="table-mc-lime">Lime</option>
+			<option value="table-mc-yellow">Yellow</option>
+			<option value="table-mc-amber">Amber</option>
+			<option value="table-mc-orange">Orange</option>
+			<option value="table-mc-deep-orange">Deep Orange</option>
+		</select>
+	</p>  
+	</div>
+	<div style="width: 45%; display: inline-block; vertical-align: top; margin-left: 30px;">
+		<h2>Description</h2>
+		<p>Tested on Win8.1 with browsers: Chrome 37, Firefox 32, Opera 25, IE 11, Safari 5.1.7</p>
+		<p>You can use this table in Bootstrap (v3) projects. Material Design Responsive Table CSS-style will override basic bootstrap style.</p>
+		<p class="mdt-subhead-2"><strong>Donate:</strong> You can support me via <a class="paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=s%2ekupletsky%40gmail%2ecom&amp;lc=US&amp;item_name=Material%20Design%20Responsive%20Table&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted">PayPal</a>, <a class="webmoney" href="https://funding.webmoney.ru/material-design-iconic-font/donate">WebMoney</a> or <a class="gratipay" href="http://gratipay.com/zavoloklom/" target="_blank">Gratipay</a></p>
+	</div>
+</div> -->
+</body>
+</html>
