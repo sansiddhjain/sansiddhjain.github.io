@@ -195,7 +195,7 @@
 			                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What is the duration time of a case?</a>
 			                </h4>
 			            </div>
-			            <div id="collapseOne" class="panel-collapse collapse">
+			            <div id="collapseTwo" class="panel-collapse collapse">
 			                <div class="panel-body">
 			                     It is the time gap (in number of days) between the first hearing date, and the final decision date. 
 			                </div>
@@ -208,7 +208,7 @@
 			                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What is coefficient of variation?</a>
 			                </h4>
 			            </div>
-			            <div id="collapseOne" class="panel-collapse collapse">
+			            <div id="collapseThree" class="panel-collapse collapse">
 			                <div class="panel-body">
 			                    It is the ratio of the standard deviation of case duration time, and the mean of case duration time. The higher the value, the greater the variability in case duration time for a district (or for a state). This is a statistical parameter used to compare across distributions with different means.
 			                </div>
@@ -221,7 +221,7 @@
 			                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What are percentage tail bounds?</a>
 			                </h4>
 			            </div>
-			            <div id="collapseOne" class="panel-collapse collapse">
+			            <div id="collapseFour" class="panel-collapse collapse">
 			                <div class="panel-body">
 			                    For all the disposed cases among the sample of a district, the case duration time is calculated, and the percentage of cases taking more than X units of time (where X can be 3 months, 6 months, etc) is calculated. This was done for 4 different levels - 3 months, 6 months, 1 year and 3 years. 
 			                </div>
@@ -235,7 +235,7 @@
 			                    	zero day disposal percentage for a district?</a>
 			                </h4>
 			            </div>
-			            <div id="collapseTwo" class="panel-collapse collapse">
+			            <div id="collapseFive" class="panel-collapse collapse">
 			                <div class="panel-body">
 			                   The percentage of cases in the sample for which the final decision date, and the first hearing date is the same.
 			                </div>
@@ -248,7 +248,7 @@
 			                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Why is there no aggregate score for state?</a>
 			                </h4>
 			            </div>
-			            <div id="collapseOne" class="panel-collapse collapse">
+			            <div id="collapseSix" class="panel-collapse collapse">
 			                <div class="panel-body">
 			                    The aggregate score of a district is calculated by calculating the KL divergence between the histogram of the case duration time of a district, and the case duration time histogram of the entire nation, treating them as probabilistic densities. If a similar process is done with states, the differences in distributions accounting for different divergence scores get normalised, and we get pretty much the same divergence scores for different states. This also makes sense, as we would expect behaviour at the state granularity to be pretty much the same across states.
 			                </div>
