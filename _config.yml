@@ -1,13 +1,14 @@
-# markdown: kramdown
-remote_theme: johno/pixyll
-# title: Welcome to Sansiddh Jain's homepage
-# description: Feel free to explore this page to get to know more about me and my projects
+markdown: kramdown
+theme: minima
+title: Welcome to Sansiddh Jain's homepage
+description: Feel free to explore this page to get to know more about me and my projects
 
 # Site settings
-title: Hello World
-email: sansiddh@gmail.com
-author: Sansiddh Jain
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+# title: Hello World
+# remote_theme: johno/pixyll
+# email: sansiddh@gmail.com
+# author: Sansiddh Jain
+# description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 # baseurl: ""
 # url: "http://sansiddhjain.github.io"
 
