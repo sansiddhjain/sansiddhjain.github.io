@@ -1,5 +1,5 @@
-title: "Blog Title"
-author: "Blog Author"
+title: "Home Page of Sansiddh Jain"
+author: "Sansiddh Jain"
 description: "Really cool blog about ... something"
 more: "read more »"
 url: "https://sansiddhjain.github.io/"
@@ -13,7 +13,8 @@ style:
   dark: false
 
 navigation:
-  - index.html
+  - index.md
+  - home.html
   - archive.html
   - about.md
 
