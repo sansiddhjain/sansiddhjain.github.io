@@ -1,32 +1,18 @@
-title: "Blog Title"
-author: "Blog Author"
-description: "Really cool blog about ... something"
+markdown: kramdown
 remote_theme: niklasbuschmann/contrast
-more: "read more »"
-# url: "https://niklasbuschmann.github.io/"
-# baseurl: "/contrast"
-paginate: 2
-permalink: pretty
-excerpt_separator: "\n\n\n" # two blank lines
+title: Welcome to Sansiddh Jain's homepage
+description: Feel free to explore this page to get to know more about me and my projects
 
-style:
-  minimalist: false
-  dark: false
+# Site settings
+# title: Hello World
+# remote_theme: johno/pixyll
+# email: sansiddh@gmail.com
+# author: Sansiddh Jain
+# description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+# baseurl: ""
+# url: "http://sansiddhjain.github.io"
 
-navigation:
-  - index.html
-  - archive.html
-  - about.md
-
-comments:
-  disqus: "disqus-contrast"
-#  isso: "comments.mysite.org"
-
-links: # see http://fontawesome.io/icons/#brand for all possible icons
-  - twitter: "https://twitter.com/sansiddh/"
-  - github: "https://github.com/sansiddhjain"
-  - envelope: "mailto:sansiddh@gmail.com"
-
-defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
-sass: {style: expanded}
-plugins: [jekyll-feed, jekyll-paginate]
+# Build settings
+# markdown: kramdown
+# permalink: pretty
+# paginate: 3
