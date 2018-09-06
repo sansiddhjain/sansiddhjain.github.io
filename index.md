@@ -1,8 +1,8 @@
 ---
-title: "Hello, World!"
+title: "Home"
 ---
 
-<!-- ###  -->
+## Hello, World! 
 
 I am a final year dual degree undergraduate student at Indian Institute of Technology (IIT) Delhi, majoring in Industrial Engineering & Computer Science. 
 

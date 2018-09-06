@@ -23,9 +23,12 @@ comments:
 #  isso: "comments.mysite.org"
 
 links: # see http://fontawesome.io/icons/#brand for all possible icons
-  - twitter: "https://twitter.com/twitter/"
-  - github: "https://github.com/niklasbuschmann/contrast"
-  - envelope: "mailto:niklas.buschmann@posteo.de"
+  - github: "https://github.com/sansiddhjain/"
+  - linkedin: "https://www.linkedin.com/in/sansiddh-jain-46096a107/"
+  - twitter: "https://twitter.com/sansiddh/"
+  - envelope: "mailto:sansiddh@gmail.com"
+  - facebook: "https://www.facebook.com/sansiddh.jain.9/"
+  - instagram: "https://www.instagram.com/not.sunsilk.or.sansad/"
 
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
 sass: {style: expanded}
