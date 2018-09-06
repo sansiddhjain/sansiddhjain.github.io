@@ -1,18 +1,31 @@
-markdown: kramdown
-remote_theme: niklasbuschmann/contrast
-title: Welcome to Sansiddh Jain's homepage
-description: Feel free to explore this page to get to know more about me and my projects
-
-# Site settings
-# title: Hello World
-# remote_theme: johno/pixyll
-# email: sansiddh@gmail.com
-# author: Sansiddh Jain
-# description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title: "Blog Title"
+author: "Blog Author"
+description: "Really cool blog about ... something"
+more: "read more »"
+url: "https://sansiddhjain.github.io/"
 # baseurl: ""
-# url: "http://sansiddhjain.github.io"
+paginate: 2
+permalink: pretty
+excerpt_separator: "\n\n\n" # two blank lines
 
-# Build settings
-# markdown: kramdown
-# permalink: pretty
-# paginate: 3
+style:
+  minimalist: false
+  dark: false
+
+navigation:
+  - index.html
+  - archive.html
+  - about.md
+
+comments:
+  disqus: "disqus-contrast"
+#  isso: "comments.mysite.org"
+
+links: # see http://fontawesome.io/icons/#brand for all possible icons
+  - twitter: "https://twitter.com/twitter/"
+  - github: "https://github.com/niklasbuschmann/contrast"
+  - envelope: "mailto:niklas.buschmann@posteo.de"
+
+defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
+sass: {style: expanded}
+plugins: [jekyll-feed, jekyll-paginate]
