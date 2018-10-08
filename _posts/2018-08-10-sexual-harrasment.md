@@ -19,7 +19,7 @@ Hypothetical situation - Suppose you're Mr. Yamnat, the boss-man of a comedy com
 
 Now that this fancy matrix is made, you partake on creating an even fancier representation of the situation, a decision graph, that clearly encapsulates what would happen when you, the agent, takes an action, and when the environment is in a particular configuration (ie, your female employee speaks up, or not). Based on your intuition on how things would pan out, you make the following graph - 
 
-![Alt text](graph1.svg)
+![Alt text](https://sansiddhjain.github.io/graph1.svg)
 
 If you fire the employee, and she does speak up, the world gives you a pat on the back. They laud you for doing the right thing, and people trust your company more. If you do fire the employee, and your female employee does not speak up, you may not be in the best situation monetarily, but hey, your care about the culture of your company too, and your conscience is clear that you took a step forward in creating a safe environment for women at your company. If you don't fire the employee, and she does speak up, that's a PR shitstorm, the absolute worst position for you to be in. If you don't fire the employee, and she does not speak up, monetarily things are the status quo, but if you a man conscious about the social implications of your actions, would you be able to sleep soundly at night?
 
@@ -31,7 +31,7 @@ Say you fire him, and she doesn't speak up. Well, you're without a key employee 
 
 Now you think, what is the chance that your female employee would speak up? You are being very conservative here, because you are suddenly a very cautious man. You assume on an average, 5% of all women would speak up about sexual harassment at the workplace, even though you know that the figure is waaay higher than what is the reality. ([Read this](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html)). You then get this decision tree.
 
-![Alt text](graph2.svg)
+![Alt text](https://sansiddhjain.github.io/.svg)
 
 # Inference
 
