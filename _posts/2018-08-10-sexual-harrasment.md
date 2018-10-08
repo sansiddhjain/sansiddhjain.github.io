@@ -19,15 +19,8 @@ Hypothetical situation - Suppose you're Mr. Yamnat, the boss-man of a comedy com
 
 Now that this fancy matrix is made, you partake on creating an even fancier representation of the situation, a decision graph, that clearly encapsulates what would happen when you, the agent, takes an action, and when the environment is in a particular configuration (ie, your female employee speaks up, or not). Based on your intuition on how things would pan out, you make the following graph - 
 
-```mermaid
-graph TD
-A[Boss-man] -- Fire Employee --> B((Node 1))
-A -- Don't Fire Employee --> C((Node 2))
-B -- She speaks up --> D[The world gives you a brownie]
-B -- She doesn't speak up --> E[At least, your conscience is clear]
-C -- She speaks up --> F[**SHITSTORM**]
-C -- She doesn't speak up --> G[How do you go to sleep at night?]
-```
+![Alt text](graph1.svg)
+
 If you fire the employee, and she does speak up, the world gives you a pat on the back. They laud you for doing the right thing, and people trust your company more. If you do fire the employee, and your female employee does not speak up, you may not be in the best situation monetarily, but hey, your care about the culture of your company too, and your conscience is clear that you took a step forward in creating a safe environment for women at your company. If you don't fire the employee, and she does speak up, that's a PR shitstorm, the absolute worst position for you to be in. If you don't fire the employee, and she does not speak up, monetarily things are the status quo, but if you a man conscious about the social implications of your actions, would you be able to sleep soundly at night?
 
 You decide to assign numerical "rewards" to each state. On what basis would you assign these rewards? Well obviously monetarily, because you're a _dhandha_ (business), - it's ruthless, dog-eat-dog world, and at the end of the day, the only question that matters is _deti kitna hai?_ (how much does it give/earn)?
@@ -37,17 +30,8 @@ Suppose you don't fire the employee, and she doesn't speak up, and things remain
 Say you fire him, and she doesn't speak up. Well, you're without a key employee now, and you go out into the world trying to find a replacement, and that takes time, effort, and money. The replacement would also happen sufficiently into the future, and you care much more about immediate returns as compared to the future ones, so you award a 0.8 decay factor to the revenue the replacement would bring. If you fire the employee, and she does speak up, you get good PR, but that does not make you gain much monetarily. It's a free brownie courtesy the world, and that's it. It gets a token reward of 10000 INR (Those who disagree and think this reward is too low, please hang on). You still have to go out and try to find a new replacement like in the previous case, so the revenue brought in by the new guy is also added with the decay factor.
 
 Now you think, what is the chance that your female employee would speak up? You are being very conservative here, because you are suddenly a very cautious man. You assume on an average, 5% of all women would speak up about sexual harassment at the workplace, even though you know that the figure is waaay higher than what is the reality. ([Read this](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html)). You then get this decision tree.
-```mermaid
-graph TD
-A[Boss-man] -- Fire Employee --> B((Node 1))
-A -- Don't Fire Employee --> C((Node 2))
-B -- p = 0.05 --> D[R = 10000 + 0.8*5L]
-B -- p = 0.95 --> E[R = 0 + 0.8*5L]
-C -- p = 0.05 --> F[R = -5L]
-C -- p = 0.95 --> G[R= 5L]
 
-```
-
+![Alt text](graph2.svg)
 
 # Inference
 
@@ -70,8 +54,11 @@ Let the following denote -
 \\(E(a)\\) :  The Expected reward, of taking action \\(a\\)
 
 The expected reward of firing the employee would be
+
 $$ E(f) = P(s)*R(s,f) + P(\overline{s})*R(\overline{s},f) $$
+
 and the expected reward of not firing would be 
+
 $$ E(\overline{f}) = P(s)*R(s,\overline{f}) + P(\overline{s})*R(\overline{s},\overline{f}) $$
 
 Now, plugging in our values of reward and probability, we get - 
