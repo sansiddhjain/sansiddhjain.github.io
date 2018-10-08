@@ -1,6 +1,7 @@
 title: "Sansiddh Jain"
 author: "Sansiddh Jain"
 description: "Really cool blog about ... something"
+markdown: "kramdown"
 more: "read more »"
 url: "https://sansiddhjain.github.io/"
 # baseurl: ""

@@ -6,7 +6,7 @@ title: "Home"
 
 I am a final year dual degree undergraduate student at Indian Institute of Technology (IIT) Delhi, majoring in Industrial Engineering & Computer Science. 
 
-I'm interested in all things artificial intelligence and machine learning, however what truly fascinates me is applying artificial intelligence, and data science in a social good context.
+I'm interested in all things artificial intelligence and machine learning, however what truly fascinates me is applying artificial intelligence, and data science in general in a social context.
 
 I did my undergraduate thesis with [Prof. Mausam](http://cse.iitd.ernet.in/~mausam/). We worked on scraping a large dataset of court case summaries from Indian district courts, analyising them for positive and negative anomalies at various administrative granularities, and developing prediction models for case duration time. You can checkout this [cool website](btp_website/home) we made to showcase our work.
 
