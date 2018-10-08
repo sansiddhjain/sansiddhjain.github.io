@@ -55,37 +55,31 @@ Now let's back up the probabilities, and calculate the expected reward of taking
 
 Let the following denote - 
 
-$s$ :  The event that the female employee speaks up
-$\overline{s}$ :  The event that she doesn't
-$f$ : Employee (the perp) is fired
-$\overline{f}$ : Employee (the perp) is not fired
-$P(e)$ :  Probability of event $e$ happening
-$R(e, a)$ :  The Reward, if action $a$ was taken, and event $e$ happened
-$E(a)$ :  The Expected reward, of taking action $a$
+\\(s\\) :  The event that the female employee speaks up
+\\(\overline{s}\\) :  The event that she doesn't
+\\(f\\) : Employee (the perp) is fired
+\\(\overline{f}\\) : Employee (the perp) is not fired
+\\(P(e)\\) :  Probability of event \\(e\\) happening
+\\(R(e, a)\\) :  The Reward, if action \\(a\\) was taken, and event \\(e\\) happened
+\\(E(a)\\) :  The Expected reward, of taking action \\(a\\)
 
 The expected reward of firing the employee would be
-$$
-E(f) = P(s)*R(s,f) + P(\overline{s})*R(\overline{s},f)
-$$
+$$ E(f) = P(s)*R(s,f) + P(\overline{s})*R(\overline{s},f) $$
 and the expected reward of not firing would be 
-$$
-E(\overline{f}) = P(s)*R(s,\overline{f}) + P(\overline{s})*R(\overline{s},\overline{f})
-$$
+$$ E(\overline{f}) = P(s)*R(s,\overline{f}) + P(\overline{s})*R(\overline{s},\overline{f}) $$
 
 Now, plugging in our values of reward and probability, we get - 
 
-$$
-E(f) = 0.05*(10000+0.8*5L) + 0.95*(0.8*5L ) = 4.005L
-$$
+$$ E(f) = 0.05*(10000+0.8*5L) + 0.95*(0.8*5L ) = 4.005L $$
+
 and
-$$
-E(\overline{f}) = 0.05*(-5L) + 0.95*(5L ) = 4.5L
-$$
+
+$$ E(\overline{f}) = 0.05*(-5L) + 0.95*(5L ) = 4.5L $$
 
 The expected reward of not firing is **higher by a considerable amount, ~50K**. Which action would Mr. Maynat take? The one that **maximizes his expected reward**! And that would definitely be, **not firing** the employee. 
 
 ## Further Inference
 
-The values I assumed were fairly conservative, and yet not firing the employee made more monetary sense by a fair margin. [This](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html) article says that less than 1% of the cases of sexual assault in India go under-reported. Taking that to be the probability of speaking up instead of 5%, we get $E(f, p(s) = 0.01) = 4.001$, and $E(\overline{f},  p(s) = 0.01) = 4.9$, which makes the decision making process all the more clear. Even if we assume that the PR shitstorm the company has to face if it chooses to not fire their employee, and the female employee does speak up, something like 20L, $E(\overline{f})$ is still $4.75$. Even if we assume the reward the company gets for firing the perp before the female employee speaks up is really high due to the good PR, say 5L, even in that case, The difference between the expected rewards of not firing and firing is more than **80,000**. From the standpoint of a business, which solely cares about maximising profits, and nothing else, it does not make sense to fire the perpetrator employee.
+The values I assumed were fairly conservative, and yet not firing the employee made more monetary sense by a fair margin. [This](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html) article says that less than 1% of the cases of sexual assault in India go under-reported. Taking that to be the probability of speaking up instead of 5%, we get \\(E(f, p(s) = 0.01) = 4.001\\), and \\(E(\overline{f},  p(s) = 0.01) = 4.9\\), which makes the decision making process all the more clear. Even if we assume that the PR shitstorm the company has to face if it chooses to not fire their employee, and the female employee does speak up, something like 20L, \\(E(\overline{f})\\) is still \\(4.75\\). Even if we assume the reward the company gets for firing the perp before the female employee speaks up is really high due to the good PR, say 5L, even in that case, The difference between the expected rewards of not firing and firing is more than **80,000**. From the standpoint of a business, which solely cares about maximising profits, and nothing else, it does not make sense to fire the perpetrator employee.
 
 # What does this all mean?
