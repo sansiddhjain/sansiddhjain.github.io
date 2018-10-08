@@ -31,7 +31,7 @@ Say you fire him, and she doesn't speak up. Well, you're without a key employee 
 
 Now you think, what is the chance that your female employee would speak up? You are being very conservative here, because you are suddenly a very cautious man. You assume on an average, 5% of all women would speak up about sexual harassment at the workplace, even though you know that the figure is waaay higher than what is the reality. ([Read this](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html)). You then get this decision tree.
 
-![Alt text](https://sansiddhjain.github.io/.svg)
+![Alt text](https://sansiddhjain.github.io/graph2.svg)
 
 # Inference
 
