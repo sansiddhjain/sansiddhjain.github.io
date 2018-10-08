@@ -16,4 +16,4 @@ I'm currently doing my master's thesis with [Prof. Aaditeshwar Seth](http://www.
 
 I usually like to go for a run from time to time, despite the evil plans of Delhi's atmosphere to stop me from doing so. Whatever free time that's left is spent on appreciating death metal music, swiping fruitlessly on Tinder, and reading random articles. 
 
-This website is still under construction, so please don't mind the broken links, and bad humor! Please feel free to contact me at [sansiddh@gmail.com](mailto:sansiddh@gmail.com)!
+This website is still under construction, so please don't mind the broken links and bad humor! Please feel free to contact me at [sansiddh@gmail.com](mailto:sansiddh@gmail.com)!

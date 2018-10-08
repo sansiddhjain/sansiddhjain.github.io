@@ -1,8 +1,14 @@
 ---
 layout: blank
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
+<main>
+  <article>
+    <header>
+      <h1><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h1>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </header>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
         MathJax.Hub.Config({
             config: ["MMLorHTML.js"],
             extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
@@ -25,13 +31,7 @@ layout: blank
             },
             showProcessingMessages: false
         });
-</script>
-<main>
-  <article>
-    <header>
-      <h1><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h1>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-    </header>
+    </script>
 {{ content }}
     <!-- {% if site.comments.isso and page.comments %}
     <hr><div id="isso-thread"></div>
@@ -40,5 +40,6 @@ layout: blank
     <hr><div id="disqus_thread"></div>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     {% endif %} -->
+
   </article>
 </main>
