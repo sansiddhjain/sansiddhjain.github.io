@@ -56,11 +56,17 @@ Now let's back up the probabilities, and calculate the expected reward of taking
 Let the following denote - 
 
 \\(s\\) :  The event that the female employee speaks up
+
 \\(\overline{s}\\) :  The event that she doesn't
+
 \\(f\\) : Employee (the perp) is fired
+
 \\(\overline{f}\\) : Employee (the perp) is not fired
+
 \\(P(e)\\) :  Probability of event \\(e\\) happening
+
 \\(R(e, a)\\) :  The Reward, if action \\(a\\) was taken, and event \\(e\\) happened
+
 \\(E(a)\\) :  The Expected reward, of taking action \\(a\\)
 
 The expected reward of firing the employee would be
