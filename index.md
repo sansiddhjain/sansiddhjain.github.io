@@ -10,10 +10,10 @@ I'm interested in all things artificial intelligence and machine learning, howev
 
 I did my undergraduate thesis with [Prof. Mausam](http://cse.iitd.ernet.in/~mausam/). We worked on scraping a large dataset of court case summaries from Indian district courts, analyising them for positive and negative anomalies at various administrative granularities, and developing prediction models for case duration time. You can checkout this [cool website](btp_website/home) we made to showcase our work.
 
-The past summer I interned at [Wadhwani AI](https://wadhwaniai.org/), which is an AI for social good research institute. Here I worked on developing a computer vision pipeline for determining the weight and other anthropometric measures of neonates, using just images taken from a mobile phone.
+The past summer I interned at [Wadhwani AI](https://wadhwaniai.org/), which is an AI for social good research institute. It's a pretty awesome place, you should check it out.
 
 I'm currently doing my master's thesis with [Prof. Aaditeshwar Seth](http://www.cse.iitd.ernet.in/~aseth/). Broadly we're working on analysing satellite data of various Indian districts to gauge the temporal and spatial variation of different development metrics.
 
-I usually like to go for a run from time to time, despite the evil plans of Delhi's atmosphere to stop me from doing so. Whatever free time that's left is spent on appreciating death metal music, exploring Delhi's food (only the kind that a humble college student can afford yet not fall sick to), and reading random articles. 
+I usually like to go for a run from time to time, despite the evil plans of Delhi's atmosphere to stop me from doing so. Whatever free time that's left is spent on appreciating death metal music, swiping fruitlessly on Tinder, and reading random articles. 
 
-Please feel free to contact me at [sansiddh@gmail.com](mailto:sansiddh@gmail.com)!
+This website is still under construction, so please don't mind the broken links, and bad humor! Please feel free to contact me at [sansiddh@gmail.com](mailto:sansiddh@gmail.com)!

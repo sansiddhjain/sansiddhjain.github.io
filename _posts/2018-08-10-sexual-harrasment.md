@@ -15,8 +15,8 @@ A striking similarity one may notice across several of these cases, is that a th
 Hypothetical situation - Suppose you're Mr. Yamnat, the boss-man of a comedy company. A female employee comes and tells you in detail about an incident where she was sexually assaulted by a fellow employee a while back. This employee is indeed important for your company, and indeed brings in a good amount of revenue. Now the ball's in your court - you have a decision to make. Suppose the world is really simplistic, with few decision making options - you can either fire him, or choose to continue working with him as your employee (no tertiary arrangements such as freelancing can be worked out in this world!). However, certain things are not under your control - your female employee may choose to speak up to world about this incident, and that will end up having significant consequences on the functioning of your company, depending upon what action you choose to take with the perpetrator. You choose to make the decision matrix, the rewards of whose entries you are totally unclear about, yet. 
 
 |                |Fire Employee		|Don't Fire Employee	|
-|----------------|-------------------------------|-----------------------------|
-|She speaks up to the world| `Unknown`|`Unknown`|	|
+|----------------|-------------------------------|
+|She speaks up to the world| `Unknown`|`Unknown`|
 |She doesn't speak up      |`Unknown`|`Unknown`|
 
 Now that this fancy matrix is made, you partake on creating an even fancier representation of the situation, a decision graph, that clearly encapsulates what would happen when you, the agent, takes an action, and when the environment is in a particular configuration (ie, your female employee speaks up, or not). Based on your intuition on how things would pan out, you make the following graph - 
