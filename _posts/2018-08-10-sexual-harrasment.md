@@ -1,10 +1,8 @@
 ---
-title:  "Economics of Sexual Harassment Explained with a Dash of Probability"
-date:   2018-08-10 22:00:00
+title:  "Viewing Sexual Harassment in India Through the Lens of Probability"
+date:   2018-10-08 22:00:00
 categories: text
 ---
-
-# Economics of Sexual Harassment Explained with a Dash of Probability 
 
 India's having it's own #MeToo movement! A lot of the cases are dealing with sexual harassment at the workplace, and the timing couldn't have been more apt, in a ceremonious sense - this week, we celebrate the 1 year anniversary of the [New York Times](https://www.nytimes.com/2017/10/05/us/harvey-weinstein-harassment-allegations.html) and [New Yorker](https://www.newyorker.com/news/news-desk/from-aggressive-overtures-to-sexual-assault-harvey-weinsteins-accusers-tell-their-stories) articles on Harvey Weinstein that shook the world, and started the #MeToo movement.
 
