@@ -2,11 +2,17 @@
 title: "Game"
 ---
 
-#Paratrooper 2018
+##Paratrooper 2018 
 
-The objective of this assignment was to recreate the classic 1980s shooter game Paratrooper (Gameplay - [here](https://www.youtube.com/watch?v=KXjWHYst1Nk)). In this game, the user controls a turret, which can be rotated left or right. The goal is to get as high a score as possible while the game lasts. Helicopters randomly spawn from different directions, shooting them down gets you points. Paratroopers may also randomly jump out of the helicopter, and shooting them down also gets points. They cannot be shot down after they have landed. If 4 paratroopers land on either side of the turret, the game ends, thus shooting them down is imperative to keep the game going. Additionally, some helicopters may try to fire bombs on the turret, and -5 is added to the net score if they do hit. On reloading ammo, -100 is added to the net score, therefore you are incentivised to use as little ammo as possible (or as few reloads as possible).
+###Introduction
 
-The main controls to be kept in mind are - 
+(Link to the game at the bottom of the page)
+
+The objective of this assignment was to recreate the classic 1980s shooter game Paratrooper (Gameplay [here](https://www.youtube.com/watch?v=KXjWHYst1Nk)). In this game, the user controls a turret, which can be rotated left or right. The goal is to get as high a score as possible while the game lasts. Helicopters randomly spawn from different directions, shooting them down gets you points. Paratroopers may also randomly jump out of the helicopter, and shooting them down also gets points. They cannot be shot down after they have landed. If 4 paratroopers land on either side of the turret, the game ends, thus shooting them down is imperative to keep the game going. Additionally, some helicopters may try to fire bombs on the turret, and -5 is added to the net score if they do hit. On reloading ammo, -100 is added to the net score, therefore you are incentivised to use as little ammo as possible (or as few reloads as possible).
+
+###Controls
+
+The main controls to keep in mind are - 
 
 |Key|Function|
 |---|--------|
@@ -16,6 +22,7 @@ The main controls to be kept in mind are -
 |**W** | Toggle Weapon|
 
 Additional controls - 
+
 |Key|Function|
 |---|--------|
 |**Esc** | Show controls|
