@@ -63,11 +63,11 @@ $$ E(\overline{f}) = P(s)*R(s,\overline{f}) + P(\overline{s})*R(\overline{s},\ov
 
 Now, plugging in our values of reward and probability, we get - 
 
-$$ E(f) = 0.05*(10000+0.8*5L) + 0.95*(0.8*5L ) = 4.005L $$
+$$ E(f) = 0.05*(4.1L) + 0.95*(4L) = 4.005L $$
 
 and
 
-$$ E(\overline{f}) = 0.05*(-5L) + 0.95*(5L ) = 4.5L $$
+$$ E(\overline{f}) = 0.05*(-5L) + 0.95*(5L) = 4.5L $$
 
 The expected reward of not firing is **higher by a considerable amount, ~50K**. Which action would Mr. Maynat take? The one that **maximizes his expected reward**! And that would definitely be, **not firing** the employee. 
 

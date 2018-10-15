@@ -15,7 +15,7 @@ style:
 
 navigation:
   - index.md
-  # - home.html
+  - game/home.html
   - archive.html
   # - about.md
 
