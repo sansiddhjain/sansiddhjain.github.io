@@ -16,7 +16,7 @@ style:
 navigation:
   - index.md
   - game/index.md
-  - archive.html
+  - blog.html
   # - about.md
 
 # comments:
