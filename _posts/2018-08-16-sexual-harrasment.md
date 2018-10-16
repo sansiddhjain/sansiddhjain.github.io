@@ -12,6 +12,8 @@ A striking similarity one may notice across several of these cases, is that a th
 
 *Note - The inspiration for doing such modelling came from Decision Theory (and it forms the basis of Markov Decision Processes). The technically inquisitive reader can read more about them [here](https://en.wikipedia.org/wiki/Decision_theory) and [here](https://en.wikipedia.org/wiki/Markov_decision_process)*
 
+<!-- *Note - I have assumed predatory sexual behaviour to be male on* -->
+
 Hypothetical situation - Suppose you're Mr. Yamnat, the boss-man of a comedy company. A female employee comes and tells you in detail about an incident where she was sexually assaulted by a fellow employee a while back. This employee is indeed important for your company - he brings in a good amount of revenue. You confront that alleged perpetrator, and the explicit denial turns into a hesitant acceptance upon persistent questioning. Now the ball's in your court - you have a decision to make. Suppose the world is really simplistic, with few decision making options - you can either fire him, or choose to continue working with him as your employee (no tertiary arrangements such as freelancing can be worked out in this world!). However, certain things are not under your control - your female employee may choose to speak up to world about this incident, and that will end up having significant consequences on the functioning of your company, depending upon what action you choose to take with the perpetrator. You choose to make the decision matrix, the rewards of whose entries you are totally unclear about, yet. 
 
 |                |Fire Employee		|Don't Fire Employee	|
@@ -79,6 +81,13 @@ The expected reward of not firing is **higher by a considerable amount, ~40K**. 
 <img style="float: left; width: 50%;" src="https://sansiddhjain.github.io/graph4.svg">
 <img style="float: left; width: 50%;;" src="https://sansiddhjain.github.io/graph5.svg">
 </p>
+
+
+
+<p align="center">
+<i>The scenarios for which further analyis is done</i>
+</p>
+
 
 The values I assumed were fairly conservative, and yet not firing the employee made more monetary sense by a fair margin. [This](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html) article says that less than 1% of the cases of sexual assault in India go under-reported. Taking that to be the probability of speaking up instead of 4%, we get \\(E(f, p(s) = 0.01) = 4.001\\), and \\(E(\overline{f},  p(s) = 0.01) = 4.85\\), which makes the decision making process all the more clear. Even if we assume that the PR shitstorm the company has to face if it chooses to not fire their employee, and the female employee does speak up, is existentially debilitating, something like 50L, \\(E(\overline{f})\\) is still \\(4.45\\). Even if we assume the reward the company gets for firing the perp before the female employee speaks up is really high due to the good PR, say 5L, even in that case, The difference between the expected rewards of not firing and firing is around **80,000**. From the standpoint of a business, which solely cares about maximising profits, and nothing else, it does not make sense to fire the perpetrator employee.
 
