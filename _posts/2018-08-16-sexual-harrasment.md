@@ -27,13 +27,13 @@ If you fire the employee, and she does speak up, the world gives you a pat on th
 
 You decide to assign numerical "rewards" to each state. On what basis would you assign these rewards? Well obviously monetarily, because you're a _dhandha_ (business), - it's ruthless, dog-eat-dog world, and at the end of the day, the only question that matters is _deti kitna hai?_ (how much does it give/earn)?
 
-Suppose you don't fire the employee, and she doesn't speak up, and things remain the status quo - your employee is as valuable to you as the revenue he generates for you; for the sake of this discussion, assume that that is 5L per month. Say you don't fire him, and then she does speak up - that is a shitstorm. You have to fire the guy immediately, so the revenue he could have generated for you is gone. Plus people start this entire #BoycottMaytan campaign and stop watching your videos, your collaborators stop working with you (you may even end up losing your job), you have to hire this law firm specialising in crisis PR and they charge an exorbitant bill and all. In short, you end up losing roughly 5L, making it's reward equal to -5L.
+Suppose you don't fire the employee, and she doesn't speak up, and things remain the status quo - your employee is as valuable to you as the revenue he generates for you; for the sake of this discussion, assume that that is 5L per month. Say you don't fire him, and then she does speak up - that is a shitstorm. You have to fire the guy immediately, so the revenue he could have generated for you is gone. Plus people start this entire #BoycottMaytan campaign and stop watching your videos, your collaborators stop working with you (you may even end up losing your job), you have to hire this law firm specialising in crisis PR and they charge an exorbitant bill and all. In short, you end up losing roughly 10L, making it's reward equal to -10L.
 
 Say you fire him, and she doesn't speak up. Well, you're without a key employee now, and you go out into the world trying to find a replacement, and that takes time, effort, and money. The replacement would also happen sufficiently into the future, and you care much more about immediate returns as compared to the future ones, so you award a 0.8 decay factor to the revenue the replacement would bring. If you fire the employee, and she does speak up, you get good PR, but that does not make you gain much monetarily. It's a free brownie courtesy the world, and that's it. It gets a token reward of 10000 INR (Those who disagree and think this reward is too low, please hang on). You still have to go out and try to find a new replacement like in the previous case, so the revenue brought in by the new guy is also added with the decay factor.
 
-Now you think, what is the chance that your female employee would speak up? You are being very conservative here, because you are suddenly a very cautious man. You assume on an average, 5% of all women would speak up about sexual harassment at the workplace, even though you know that the figure is waaay higher than what is the reality. ([Read this](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html)). You then get this decision tree.
+Now you think, what is the chance that your female employee would speak up? You are being very conservative here, because you are suddenly a very cautious man. You assume on an average, 4% of all women would speak up about sexual harassment at the workplace, even though you know that the figure is waaay higher than what is the reality. ([Read this](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html)). You then get this decision tree.
 
-![Alt text](https://sansiddhjain.github.io/graph2.svg)
+![Alt text](https://sansiddhjain.github.io/graph6.svg)
 
 # Inference
 
@@ -74,6 +74,11 @@ $$ E(\overline{f}) = 0.05*(-5L) + 0.95*(5L) = 4.5L $$
 The expected reward of not firing is **higher by a considerable amount, ~50K**. Which action would Mr. Maynat take? The one that **maximizes his expected reward**! And that would definitely be, **not firing** the employee. 
 
 ## Further Inference
+
+<p align="center">
+<img style="float: left;" src="https://sansiddhjain.github.io/graph4.svg">
+<img style="float: right;" src="https://sansiddhjain.github.io/graph5.svg">
+</p>
 
 The values I assumed were fairly conservative, and yet not firing the employee made more monetary sense by a fair margin. [This](https://www.livemint.com/Politics/AV3sIKoEBAGZozALMX8THK/99-cases-of-sexual-assaults-go-unreported-govt-data-shows.html) article says that less than 1% of the cases of sexual assault in India go under-reported. Taking that to be the probability of speaking up instead of 5%, we get \\(E(f, p(s) = 0.01) = 4.001\\), and \\(E(\overline{f},  p(s) = 0.01) = 4.9\\), which makes the decision making process all the more clear. Even if we assume that the PR shitstorm the company has to face if it chooses to not fire their employee, and the female employee does speak up, something like 20L, \\(E(\overline{f})\\) is still \\(4.75\\). Even if we assume the reward the company gets for firing the perp before the female employee speaks up is really high due to the good PR, say 5L, even in that case, The difference between the expected rewards of not firing and firing is more than **80,000**. From the standpoint of a business, which solely cares about maximising profits, and nothing else, it does not make sense to fire the perpetrator employee.
 
