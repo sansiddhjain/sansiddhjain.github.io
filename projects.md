@@ -6,11 +6,8 @@ title: "Projects"
 ## Aaditeshwar Seth, IIT Delhi
 ### Master's Thesis
 
-· Working on developing models for estimating social development indicators (employment, literacy, etc) from satellite images and nightlight data with Census 2011 data serving as ground truth
-· Trained different deep learning models via transfer learning (developing on Oshri et al (KDD 2018)) to predict labels (extracted from Census 2011) given an input of a satellite image
-· Clustered spatial variation of village labels from district hotspots to assign different labels to districts
-· Implemented 2-Step Floating Catchment Analysis (2SFCA) to obtain accessibility metric for every
-village in dataset of 2 Lakh villages
+Can satellite data, specifically images and nightlight data, be used to track social development indicators, such as household infrastructure, healthcare, and literacy? That is the question we are trying to answer with this project. The possibilities with even a reasonably-accurate model are endless - coming to conclusions about development much more robustly by not relying on extremely extensive, once-in-a-decade Censuses.
+My work has focused more on the spatial variation of social development indicators - what is the variation in social development indicators as we move further away from district centers? Do underdeveloped and developed districts exhibit a significant difference in spatial variation? Is the spatial variation across various social development indicators the same?
 
 [\[repo-1\]](https://github.com/sansiddhjain/MTP-spatial-clustering) [\[repo-2\]](https://github.com/sansiddhjain/MTP-accessibility)
 
@@ -23,26 +20,15 @@ village in dataset of 2 Lakh villages
 <!-- <img style="float: left; width: 50%;;" src="https://sansiddhjain.github.io/graph5.svg"> -->
 </p>
 
-· Developed a computer vision pipeline for estimating volume of an object given a set of images
-· Designed for determining whether newborn baby is low birth-weight or not using a mobile phone
-· Used Mask R-CNN trained on MS COCO dataset to segment out object from background in image
-· Applied Structure-from-Motion (SfM) on segmented images to generate sparse 3D point cloud of object
-· Applied Multi-view Stereo (MVS) depth map fusion on above resultant to generate dense point cloud
-· Implemented ”Touch-Expand” graph-cut algorithm to generate closed surface for volume calculation
-· Also advised student team working on estimating soyabean yield from satellite images in Maharashtra
-
+My work here focused on developing a computer vision pipeline for estimating volume of an object given a set of images. This was for determining whether a newborn baby is low birth-weight or not using images captured on a mobile phone. India has a high incidence of neonate and child mortality due to low-birth weight - 350,000 newborns die in India before they turn 28 days old, and that accounts for roughly 50% of all neonate deaths in India ([Source](http://archive.indiaspend.com/cover-story/low-birth-weight-preterm-delivery-cause-most-newborn-deaths-in-india-45376)). A lot of these deaths are avoidable - more than 66% of neonates in India are not weighed at birth (because the proper infrastructure doesn't exist). Since India has one of the highest incidences of low-birth-weight in general (28% of babies born in India are low-birth-weight), solving this can have an impact at an enormous scale ([Data Source](https://data.unicef.org/topic/nutrition/low-birthweight/)). I worked on developing a computer vision pipeline with largely classical vision techniques. Mask-RCNN was used for image segmentation, and SfM and MVS techniques were used for 3D reconstruction to obtain the volume of object from its images.
 
 # Data-driven Legal Reforms  
 ## Advisors - Prof. Mausam & Prof. Nomesh Bolia, IIT Delhi 
 ### Undergraduate Thesis
 
-· Scraped large dataset (> 15TB) of court cases summaries from Indian district courts. 420+/594 dis- tricts (∼ 71%) scraped. Analysed districts across several metrics to identify good and bad anomalies
-· Used KL divergence to come up with aggregate measure encompassing performance across all metrics
-· Implemented lexical cosine distance clustering to obtain a standardised list of casetypes across courts
-· Trained several random forest, gradient boosted trees, and MLP models to predict case duration time
-· Trained mixture density networks to output probability distribution over case duration time instead
-· Modeled case (sequence of hearings) as a Markov Reward Process with reward being case duration
-· Website designed to showcase project work. Presented to senior SC judge Justice Madan Lokur, and NITI Aayog
+The objective of this project was to amass a very large dataset of court cases from Indian district courts. We scrape (still ongoing!) a dataset of more than 10 million cases at Indian district courts from [this](https://services.ecourts.gov.in/ecourtindia_v6/) website. The first part of the project focused on analysing the data to make inferences regarding the performance of various districts - which are the good/bad performing districts, good/bad performing states, are certain districts outstandingly good/egregiously bad with respect to certain casetypes, etc. For this we defined various evaluation metrics (such as mean case duration time, percentage tail bounds) for statistically analysing districts for identifying anomalies. KL Divergence was also used to create an aggregate metric.
+
+The second part of the project focused on developing various predictive models - given information about a case, can we predict its case duration time? Various models such as Random Forest, Boosted Trees, Feedforward NNs, Mixture Density Networks etc were used. We also designed a website to demonstrate our work, which was showcased to senior SC judge Justice Madan Lokur, and NITI Aayog (link is below).
 
 [\[demo\]](https://sansiddhjain.github.io/btp_website/home)
            
@@ -51,11 +37,6 @@ village in dataset of 2 Lakh villages
 ## Advisor - Prof. Mausam, IIT Delhi 
 ### In collaboration with i2e1
 
-· Developed algorithm to estimate indoor location of multiple devices using solely Wi-Fi RSSI values
-· Necessary for algorithm to be scalable, energy efficient, for deployment in several indoor environments
-· Initial approaches included triangulation heuristics, and data agnostic signal propagation models
-· Experimented with fingerprinting models; supervised nature inhibited scalability
-· Trained unsupervised multinomial Hidden Markov Model (HMM) and unsupervised Gaussian HMM
-· Developed 2 Kalman Filter models - one before RSSI to distance conversion, one after
+The objective of this project was to develop algorithms which are able to triangulate the location of a user given solely the WiFi RSSI values. Wi-Fi RSSI is an indication of signal strength, which is inversely proportional to distance. The initial approaches were based on RSSI-to-distance conversion and triangulation, however, noise in RSSI led to highly erroneous predictions. Next, "Fingerprinting" (maintaining a database of RSSI and distance tuples) was tried out, however, problems of scalability rendered this technique not useful. Next,  Various sequence models, such as Hidden Markov Models (HMM) and Kalman Filters were tried out
 
 [\[repo\]](https://github.com/sansiddhjain/internal-localisation)
