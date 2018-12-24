@@ -15,8 +15,11 @@ style:
 
 navigation:
   - index.md
+  - projects.md
+  - assignments.html
   - game/index.md
   - blog.html
+  
   # - about.md
 
 # comments:
