@@ -19,7 +19,7 @@ village in dataset of 2 Lakh villages
 
 <p>
 <!-- <img style="float: left; width: 50%;" src="https://sansiddhjain.github.io/graph4.svg"> -->
-<img src="images/wadhwai-ai-logo.jpg" style="width: 10%;" >
+<img src="https://sansiddhjain.github.io/images/wadhwai-ai-logo.jpg" style="width: 10%;" >
 <!-- <img style="float: left; width: 50%;;" src="https://sansiddhjain.github.io/graph5.svg"> -->
 </p>
 
