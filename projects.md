@@ -2,6 +2,8 @@
 title: "Projects"
 --- 
 
+This is a brief overview of some of my research projects. For a more technical description, please refer to my CV [here](https://sansiddhjain.github.io/cv-sansiddh.pdf), or refer the individual repositories.
+
 <p>
 <font size="+3"> Tracking Social Development From Satellite Data </font>
 <br>

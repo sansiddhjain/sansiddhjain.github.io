@@ -2,6 +2,8 @@
 title: "Assignments"
 --- 
 
+For a more detailed overview, please refer to the individual repositories.
+
 <p>
 <img src="../images/paratrooper-game.jpg" style="float: left; width: 15%; margin: 12px" >
 <font size="+3"> Modern Reimagination of Paratrooper </font>
