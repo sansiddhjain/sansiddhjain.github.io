@@ -10,7 +10,7 @@ I'm interested in all things artificial intelligence and machine learning, howev
 
 I did my undergraduate thesis with [Prof. Mausam](http://cse.iitd.ernet.in/~mausam/). We worked on scraping a large dataset of court case summaries from Indian district courts, analyising them for positive and negative anomalies at various administrative granularities, and developing prediction models for case duration time. You can checkout this [website](btp_website/home) we made to showcase our work.
 
-The past summer I interned at [Wadhwani AI](https://wadhwaniai.org/), which is an AI for Social Good research institute, based out of Bombay. They are working on solving some pertinent social problems in India, using interesting techniques from AI.
+The past summer I interned at [Wadhwani AI](https://wadhwaniai.org/), which is a research institute working on AI for Social Good. They are working on solving some pertinent social problems in India, using interesting techniques in AI.
 
 I'm currently doing my master's thesis with [Prof. Aaditeshwar Seth](http://www.cse.iitd.ernet.in/~aseth/). Broadly we're working on analysing satellite data and Census data of various Indian districts to extract meaningful inferences on social development metrics, and develop models for predicting these metrics given satellite data.
 
