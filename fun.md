@@ -9,4 +9,4 @@ title: "Fun"
 Code for visualising Mandelbrot set and creating a zoom-in video.
 </p>
 
-[\[repo\]](https://github.com/sansiddhjain/mandelbrot)
+[\[repo\]](https://github.com/sansiddhjain/mandelbrot) [\[sample-images\]](https://sansiddhjain.github.io/mandelbrot)
