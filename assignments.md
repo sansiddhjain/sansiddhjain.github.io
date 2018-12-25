@@ -65,8 +65,7 @@ Code for converting problem of subgraph creation under constraints as a SAT prob
 Code for calculating the best k-step-function approximation for a set of points in 2D given a distance metric.
 </p>
 
-<!-- &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; [\[repo\]](https://github.com/sansiddhjain/k-function-approximation) -->
-[\[repo\]](https://github.com/sansiddhjain/k-function-approximation)
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; [\[repo\]](https://github.com/sansiddhjain/k-function-approximation)
 
 <p>
 <img src="../images/maximal-points.png" style="float: left; width: 15%; margin: 12px" >
@@ -76,6 +75,8 @@ Algorithm for finding the maximal points among a set of points in 3D.
 </p>
 
 [\[repo\]](https://github.com/sansiddhjain/3d-maxima)
+
+<br>
 
 <p>
 <img src="../images/kaggle-logo-2.png" style="float: left; width: 15%; margin: 12px" >
