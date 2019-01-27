@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map of Districts of India</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- <script type="text/javascript" src="material_design_table.js"></script>
+<link rel="stylesheet" type="text/css" href="material_design_table.css"> -->
+
+<link rel="stylesheet" type="text/css" href="../library/leaflet/leaflet.css">
+<script type="text/javascript" src="../library/leaflet/leaflet.js"></script>
+<script src="../library/leaflet/leaflet.hotline.js"></script>
+
+<script src="../GeoJSON_Files/main.geojson"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<style type="text/css">
+	body {
+	    font-family: 'Roboto';
+	    /*font-size: 22px;*/
+	}
+	/*#navID{*/
+		/*background: #FFFFFF;*/
+		/*color: #0000FF;*/
+	/*}*/
+	
+	#navID ul li ul{
+		max-height:300px;/* you can change as you need it */
+		overflow:auto;/* to get scroll */
+		/*background: blue;*/
+		/*color: #0000FF;*/
+	}
+	#map { 
+		height: 600px; 
+		width: 1000px;
+		margin: auto;
+	}
+	.info {
+	    padding: 6px 8px;
+	    font: 14px/16px Arial, Helvetica, sans-serif;
+	    background: white;
+	    background: rgba(255,255,255,0.8);
+	    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	    border-radius: 5px;
+	}
+	.info h4 {
+	    margin: 0 0 5px;
+	    color: #777;
+	}
+	.info h6 {
+	    margin: 0 0 2px;
+	    color: #777;
+	}
+	.faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+    h1 {
+    	font: 
+    	margin: auto;
+    	text-align: center;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072"; /*glyphicon glyphicon-chevron-righe072" "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
+<body>
+<section class="w3-container w3-center" style="max-width:2000px">
+		<h2 >Analysis of Census Data</h2>
+		<p class="w3-opacity"><i>ICTD Lab, Indian Institute of Technology, Delhi</i></p>
+</section> 
+
+ <nav class="navbar navbar-default" id="navID">
+	<div class="container-fluid">
+		
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Census 2011<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="../2011/bf.html">Bathroom Facility</a></li>
+					<li><a href="../2011/chh.html">Condition of Household</a></li>
+					<li><a href="../2011/fc.html">Fuel for Cooking</a></li>
+					<li><a href="../2011/f_emp.html">Female Employment</a></li>
+					<li><a href="../2011/emp.html">Employment</a></li>
+					<li><a href="../2011/msl.html">Main Source of Light</a></li>
+					<li><a href="../2011/msw.html">Main Source of Water</a></li>
+					<li><a href="../2011/asset.html">Asset Ownership</a></li>
+					
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Census 2001<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="../2001/bf.html">Bathroom Facility</a></li>
+					<li><a href="../2001/chh.html">Condition of Household</a></li>
+					<li><a href="../2001/fc.html">Fuel for Cooking</a></li>
+					<li><a href="../2001/f_emp.html">Female Employment</a></li>
+					<li><a href="../2001/emp.html">Employment</a></li>
+					<li><a href="../2001/msl.html">Main Source of Light</a></li>
+					<li><a href="../2001/msw.html">Main Source of Water</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Change<span class="caret"></span></a>
+				<ul class="dropdown-menu scrollable-menu" role="menu">
+					<li><a href="../change/bf.html">Bathroom Facility</a></li>
+					<li><a href="../change/chh.html">Condition of Household</a></li>
+					<li><a href="../change/fc.html">Fuel for Cooking</a></li>
+					<li><a href="../change/f_emp.html">Female Employment</a></li>
+					<li><a href="../change/emp.html">Employment</a></li>
+					<li><a href="../change/msl.html">Main Source of Light</a></li>
+					<li><a href="../change/msw.html">Main Source of Water</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<h1>Fuel for Cooking 2001 for All Districts</h1>
+
+<div id="map">
+	<script type="text/javascript">
+		function getColor(d) {
+			if (d == 1) {
+				return 'rgb(' + [0xff, 0x00, 0].join(',') + ')';
+			}
+			else if (d == 2) {
+				return 'rgb(' + [0xff, 0xff, 0].join(',') + ')';
+			}
+			else{
+				return 'rgb(' + [0x00, 0xff, 0].join(',') + ')';	
+			}
+		}
+
+		function style(feature) {
+	        return {
+		        fillColor: getColor(feature.properties.fc_2001),
+		        weight: 2,
+		        opacity: 1,
+		        color: 'white',
+		        dashArray: '3',
+		        fillOpacity: 0.7
+		    };
+		}
+
+		function convert_(s) {
+			s = s.toLowerCase();
+			s = s.replace(/ /g, '_');
+			return s;
+		}
+
+		function onClick(e) {
+			var layer = e.target;
+
+			// window.location.href = 'district_pages/'+convert_(layer.feature.properties.NAME_1)+'_'+convert_(layer.feature.properties.NAME_2)+'.html';
+		}
+
+		function highlightFeature(e) {
+		    var layer = e.target;
+
+		    layer.setStyle({
+		        weight: 5,
+		        color: '#666',
+		        dashArray: '',
+		        fillOpacity: 0.7
+		    });
+
+		    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+		        layer.bringToFront();
+		    }
+		    info.update(layer.feature.properties);
+		}
+
+		function resetHighlight(e) {
+		    districts_layer.resetStyle(e.target);
+		    info.update();
+		}
+
+		function onEachFeature(feature, layer) {
+		  	layer.on({
+		        mouseover: highlightFeature,
+		        mouseout: resetHighlight,
+		        click: onClick
+		    });
+		}
+
+		function describe(d){
+			if (d == 1) {
+				return 'Rudimentary';
+			}
+			else if (d == 2) {
+				return 'Intermediate';
+			}
+			else {
+				return 'Advanced';
+			}
+		}
+
+		function toInt(n){ return Math.round(Number(n)); };
+
+		var map_var = L.map('map', {
+		    center: L.latLng(22.69, 77.97),
+		    zoom: 5
+		});
+		var info = L.control();
+		info.onAdd = function (map) {
+		    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+		    this.update();
+		    return this._div;
+		};
+
+		// method that we will use to update the control based on feature properties passed
+		info.update = function (props) {
+			this._div.innerHTML = '<h4>Fuel for Cooking 2001</h4>' +  (props ?
+				'<b>' + props.DISTRICT + ", " + props.ST_NM + '</b><br />' + describe(props.fc_2001) + '<br />'
+		        : 'Hover over a district');
+		};
+
+		var districts_layer = L.geoJson(india_districts, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map_var);
+
+		info.addTo(map_var);
+
+		var legend = L.control({position: 'bottomright'});
+
+		legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend'),
+				colors = ['FF0000', 'FFFF00', '00FF00'];
+
+			for (var i = 0; i < colors.length; i++) {
+				if (i == 0) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> rudimentary </i> ';
+					}
+				else if (i == colors.length-1) {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> advanced </i> ';
+					}
+				else {
+					div.innerHTML +=
+						'<i style="background:#' + colors[i] + '"> intermediate </i> ';
+				}
+			}
+
+			return div;
+		};
+
+		legend.addTo(map_var);
+
+		// var snippet = L.control({position: 'bottomleft'});
+
+		// snippet.onAdd = function (map) {
+
+		// 	var div = L.DomUtil.create('div', 'info');
+
+		// 	div.innerHTML = '<h6>National Average</h6>' +
+		// 		'<b>'+ humanise(toInt(192.335662113)) + '</b><br />' +
+		// 		'<h6>Best District</h6>' +
+		// 		'<b>Alappuzha, Kerala </b> -  '+ humanise(toInt(24.2307426736)) + '<br />' +
+		// 		'<h6>Worst District</h6>' +
+		// 		'<b>Kathua, Jammu and Kashmir </b> -  '+ humanise(toInt(774.027661312)) + '<br />';
+		// 	return div;
+		// };
+
+		// snippet.addTo(map_var);
+
+	</script>
+</div>
+</body>
+</html>
