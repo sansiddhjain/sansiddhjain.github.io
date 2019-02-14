@@ -1,3 +1,28 @@
+@font-face {
+  font-family: Quicksand;
+  src: url(Quicksand-Regular.otf);
+}
+
+a {
+  color: hotpink;
+  /*color: #cc4b48;*/
+  /*font-family: helvetica;*/
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+}
+
+/*a:visited {
+  color: purple;
+}*/
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
