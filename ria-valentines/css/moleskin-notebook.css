@@ -1,11 +1,11 @@
-@font-face {
+/*@font-face {
   font-family: Quicksand;
   src: url(Quicksand-Regular.otf);
-}
+}*/
 
 a {
   color: hotpink;
-  color: #cc4b48;
+  /*color: #cc4b48;*/
   /*font-family: helvetica;*/
   text-decoration: none;
   text-transform: uppercase;
