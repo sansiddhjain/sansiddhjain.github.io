@@ -1,0 +1,290 @@
+/* ================
+// Settings
+// ============= */
+
+$letters: 27;
+$bubbles: 20;
+$roses: 7;
+$pedals: 7;
+
+
+/* ================
+// Love Letters
+// ============= */
+
+.love {
+  position: relative;
+  margin-bottom: 6em;
+  padding-top: 4em;
+  text-align: center;
+  
+  @media (min-width: 600px) {
+    left: 50%;
+    margin-bottom: 0;
+    margin-left: 300 / 16 / 2 * -1em;
+    padding-top: 10em;
+    transform: translate(-50%, 0);
+  }
+  
+}
+
+  .letter {
+    display: inline-block;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    font-size: 4vmin;
+    text-shadow: 
+      0 0 .25em red,
+      0 0 .35em red,
+      0 0 .45em transparent,
+      0 0 .55em transparent,
+      0 0 .65em transparent;
+    
+    @media (min-width: 600px) {
+      offset-distance: 0;
+      offset-path: path('m0, 0 c100, -150 200, -150 300, 0');
+    }
+    
+    @for $i from 1 through $letters {
+      
+      &:nth-child(#{$i}) {
+        animation: twinkle (.15s * $letters) infinite random($letters) * .15s;
+        offset-distance: (100% / $letters) * $i;
+      }
+      
+    }
+    
+    &:empty {
+      padding: 0 .2em;
+    }
+    
+  }
+
+  @keyframes twinkle {
+    
+    50% {
+      text-shadow: 
+        0 0 .25em red,
+        0 0 .35em red,
+        0 0 .45em red,
+        0 0 .55em red,
+        0 0 .65em red;
+    }
+    
+  }
+
+
+/* ================
+// Roses
+// ============= */
+
+.roses {
+  position: relative;
+  height: 50vmin;
+  width: 100%;
+  animation: grow 10s forwards;
+  transform: rotate(-180deg);
+}
+
+@keyframes grow {
+  
+  100% {
+    transform: rotate(15deg);
+  }
+  
+}
+
+  .rose {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    perspective: 50em;
+    transform: 
+      translate(-50%, -50%)
+      rotate(-25deg);
+    transform-style: preserve-3d;
+    
+    @for $i from 1 through $roses {
+      
+      &:nth-child(#{$i}) {
+        $size: (28 / $roses) * $i + (random(100) * .05vmin);
+        z-index: $roses - $i;
+        height: $size;
+        width: $size;
+      }
+      
+    }
+    
+  }
+
+    .pedal {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform-origin: center 100%;
+      
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: '';
+        border-radius: .35em 50% 35% 50%;
+        transform: rotate(45deg);
+      }
+      
+      @for $i from 1 through $pedals {
+        
+        &:nth-child(#{$i}) {
+          transform: 
+            translate(-50%, 0)
+            rotateZ(360 / $pedals * $i * 1deg)
+            rotateX(-70deg)
+            rotateY(8deg)
+            scale(0);
+        }
+        
+        @for $x from 1 through $pedals {
+          
+          .rose:nth-child(#{$i}) &:nth-child(#{$x}) {
+            animation: flower-#{$x} 10s forwards ($roses * .45s) - ($i * .45s);
+            
+            &:before {
+              background: darken(red, random(100) * .215);
+            }
+            
+          }
+          
+        }
+        
+      }
+      
+    }
+
+    @for $i from 1 through $pedals {
+
+      @keyframes flower-#{$i} {
+
+        100% {
+          transform: 
+            translate(-50%, 0)
+            rotateZ(360 / $pedals * $i * 1deg)
+            rotateX(0)
+            rotateY(8deg)
+            scale(1);
+        }
+
+      }
+
+    }
+
+
+/* ================
+// Bursts
+// ============= */
+
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+  .bubble {
+    position: absolute;
+    z-index: 200;
+    border-radius: 50%;
+    
+    @for $i from 1 through $bubbles {
+     
+      &:nth-child(#{$i}) {
+        $size: random(20) * 1vmin;
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+        height: $size;
+        width: $size;
+        animation: love-burst (.15 * $bubbles * 1s) infinite .15s * $i - .15s;
+        box-shadow: inset 0 0 0 $size / 2 #fff;
+        transform: 
+          translate(0, random(25) * .05em)
+          scale(0);
+        transform-origin: center bottom;
+      }
+      
+    }
+    
+  }
+
+  @keyframes love-burst {
+    
+    50%,
+    100% {
+      box-shadow: inset 0 0 0 0 red;
+      transform: 
+        translate(0, 0)
+        scale(1);
+    }
+    
+  }
+  
+    .heart {
+      fill: #fff;
+      opacity: 0;
+      
+      @for $i from 1 through $bubbles {
+     
+        .bubble:nth-child(#{$i}) & {
+          animation: love (.15 * $bubbles * 1s) forwards infinite .15s * $i - .15s;
+         
+          @if $i % 2 == 0 {
+            transform: 
+              scale(.5)
+              rotate(random(50) * 1deg);
+          } @else {
+            transform: 
+              scale(.5)
+              rotate(random(35) * -1deg);
+          }
+          
+        }
+      
+      }
+
+    }
+
+    @keyframes love {
+      
+      50% {
+        fill: red;
+        opacity: 1;
+      }
+      
+    }
+
+
+/* ================
+// Structure
+// ============= */
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  overflow: hidden;
+  font-family: 'Petit Formal Script';
+  background: 
+    radial-gradient(
+      ellipse at center,
+        #051838,
+        #0A093B 100%
+    );
+  color: #fff;
+}
