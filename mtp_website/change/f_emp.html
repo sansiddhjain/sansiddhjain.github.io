@@ -130,6 +130,7 @@
 					<li><a href="../2001/emp.html">Employment</a></li>
 					<li><a href="../2001/msl.html">Main Source of Light</a></li>
 					<li><a href="../2001/msw.html">Main Source of Water</a></li>
+					<li><a href="../2001/asset.html">Asset Ownership</a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -142,6 +143,7 @@
 					<li><a href="../change/emp.html">Employment</a></li>
 					<li><a href="../change/msl.html">Main Source of Light</a></li>
 					<li><a href="../change/msw.html">Main Source of Water</a></li>
+					<li><a href="../change/asset.html">Asset Ownership</a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -266,7 +268,7 @@
 
 		// method that we will use to update the control based on feature properties passed
 		info.update = function (props) {
-			this._div.innerHTML = '<h4>Female Employment Change</h4>' +  (props ?
+			this._div.innerHTML = '<h4>Female Employment Change </h4>' +  (props ?
 				'<b>' + props.DISTRICT + ", " + props.ST_NM + '</b><br />' + describe(props.f_emp_change) + '<br />'
 		        : 'Hover over a district');
 		};
