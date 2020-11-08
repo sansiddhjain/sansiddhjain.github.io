@@ -1,1 +1,9 @@
 *xcf/
+
+.jekyll-cache/**
+**.jekyll-cache/
+
+org-img/**
+**org-img/
+
+.DS_Store
