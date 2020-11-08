@@ -4,18 +4,12 @@ title: "Home"
 
 ## Hello, World! 
 
-I am a final year dual degree undergraduate student at Indian Institute of Technology (IIT) Delhi, majoring in Industrial Engineering & Computer Science. 
+I am a research fellow at [Wadhwani AI](https://wadhwaniai.org/). I had graduated from from Indian Institute of Technology (IIT) Delhi in 2019, with degrees in Industrial Engineering & Computer Science. 
 
-I'm interested in all things artificial intelligence and machine learning, however what truly fascinates me is applying artificial intelligence and data science in general, in a social context.
+I'm interested in all things artificial intelligence and machine learning, however what truly fascinates me is applied artificial intelligence and data science, especially in a social context.
 
 I did my undergraduate thesis with [Prof. Mausam](http://cse.iitd.ernet.in/~mausam/). We worked on scraping a large dataset of court case summaries from Indian district courts, analyising them for positive and negative anomalies at various administrative granularities, and developing prediction models for case duration time. You can checkout this [website](btp_website/home) we made to showcase our work.
 
-The past summer I interned at [Wadhwani AI](https://wadhwaniai.org/), which is a research institute working on AI for Social Good. They are working on solving some pertinent social problems in India, using interesting techniques in AI.
+The summer of 2018 I had interned at [Wadhwani AI](https://wadhwaniai.org/) where I had worked on the anthropometry team, which is also the team I am currently a part of.
 
-I'm currently doing my master's thesis with [Prof. Aaditeshwar Seth](http://www.cse.iitd.ernet.in/~aseth/). Broadly we're working on analysing satellite data and Census data of various Indian districts to extract meaningful inferences on social development metrics, and develop models for predicting these metrics given satellite data.
-
-I usually like to go for a run from time to time, despite the evil plans of Delhi's atmosphere to stop me from doing so. Whatever free time that's left is spent on appreciating death metal music, cheering for the Los Angeles Lakers, and reading random articles. 
-
-Please have a look at my website for an overview of my projects, assignments, and more.
-
-<!-- This website is still under construction, so please don't mind the broken links and bad humor! Please feel free to contact me at [sansiddh@gmail.com](mailto:sansiddh@gmail.com)! -->
+I did my master's thesis with [Prof. Aaditeshwar Seth](http://www.cse.iitd.ernet.in/~aseth/). Broadly we worked on analysing satellite data and Census data of various Indian districts to extract meaningful inferences on social development metrics, and develop models for predicting these metrics given satellite data.
