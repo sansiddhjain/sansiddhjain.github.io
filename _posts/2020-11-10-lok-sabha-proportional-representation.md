@@ -14,9 +14,14 @@ A small caveat - according to election commission data, the total number of vote
 
 ## Vote Shares
 
+Beyond columns C and D, the colours light red, light yellow, and light green correspond to ECI's definition of regional, state, and national parties respectively. Columns C and D correspond to the number of seats contested and won respectively. 
+
 ![nda](https://sansiddhjain.github.io/photos/general-elections/nda.png)
+Vote share for NDA parties in descending order
 ![upa](https://sansiddhjain.github.io/photos/general-elections/upa.png)
+Vote share for UPA parties in descending order
 ![rest](https://sansiddhjain.github.io/photos/general-elections/rest.png)
+Vote share for other parties and independents in descending order
 
 ## Insights
 
