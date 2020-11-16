@@ -22,7 +22,7 @@ A small caveat - according to election commission data, the total number of vote
 
 ### NDA wins the election here as well
 
-In the 2019 general election, BJP won a majority in seats by itself, not requiring its NDA allies. However, by vote share, NDA does not hit the majority mark, getting 43.92% of the votes. Their main competitor, the UPA, gets 24.59% of the votes. It's highly unlikely for UPA to get the extra 25.41% vote by convincing others to join their coalition before NDA gets their extra 6.08%. Therefore, the NDA is winning this election in this universe as well.
+In the 2019 general election, BJP won a majority in seats by itself, not requiring its NDA allies. However, by vote share, NDA does not hit the majority mark, getting 44.31% of the votes. Their main competitor, the UPA, gets 24.71% of the votes. It's highly unlikely for UPA to get the extra 25.41% vote by convincing others to join their coalition before NDA gets their extra 6%. Therefore, the NDA is winning this election in this universe as well.
 
 ### NDA allies are far more important here
 
@@ -31,3 +31,15 @@ As stated before, BJP won a majority in seats by itself in our universe, which t
 ### NDA allies and state elections
 
 This also has disastrous consequences in the state elections for the BJP. The 2019 Maharashtra and 2020 Bihar state elections have not happened yet in this universe. If the results of the Maharashtra elections are the same, BJP cannot ignore the demands of chief ministership from Shiv Sena - they will simply leave the NDA otherwise. We may get still get Uddhav Thackeray as CM, but with BJP as the coalition partner. Similarly, the rhetoric of LJP and JD(U) will be far more empowered in the 2020 Bihar elections, and BJP cannot choose to compete for all of Punjab's 117 seats in 2022 on their own (as they are doing in [our universe](https://indianexpress.com/article/india/chugh-bjp-to-contest-all-117-seats-in-2022-punjab-polls-7053726/)).
+
+### Internal "reordering" of NDA allies
+
+### Where will NDA get the remaining 6% from?
+
+### Didi, the Trump card
+
+### Mahagathbandhan, unlikely alliance
+
+### Andhra and Telangana Parties
+
+### Scramble for the votes of Independents
