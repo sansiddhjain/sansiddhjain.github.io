@@ -14,9 +14,9 @@ A small caveat - according to election commission data, the total number of vote
 
 ## Vote Shares
 
-![Alt text](general-elections/nda.png)
-![Alt text](general-elections/upa.png)
-![Alt text](general-elections/rest.png)
+![nda](https://sansiddhjain.github.io/photos/general-elections/nda.png)
+![upa](https://sansiddhjain.github.io/photos/general-elections/upa.png)
+![rest](https://sansiddhjain.github.io/photos/general-elections/rest.png)
 
 ## Insights
 
