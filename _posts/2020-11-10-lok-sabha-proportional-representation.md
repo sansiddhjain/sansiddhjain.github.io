@@ -14,6 +14,10 @@ A small caveat - according to election commission data, the total number of vote
 
 ## Vote Shares
 
+![Alt text](general-elections/nda.png)
+![Alt text](general-elections/upa.png)
+![Alt text](general-elections/rest.png)
+
 ## Insights
 
 ### NDA wins the election here as well
@@ -26,4 +30,4 @@ As stated before, BJP won a majority in seats by itself in our universe, which t
 
 ### NDA allies and state elections
 
-This also has disastrous consequences in the state elections for the BJP. 
+This also has disastrous consequences in the state elections for the BJP. The 2019 Maharashtra and 2020 Bihar state elections have not happened yet in this universe. If the results of the Maharashtra elections are the same, BJP cannot ignore the demands of chief ministership from Shiv Sena - they will simply leave the NDA otherwise. We may get still get Uddhav Thackeray as CM, but with BJP as the coalition partner. Similarly, the rhetoric of LJP and JD(U) will be far more empowered in the 2020 Bihar elections, and BJP cannot choose to compete for all of Punjab's 117 seats in 2022 on their own (as they are doing in [our universe](https://indianexpress.com/article/india/chugh-bjp-to-contest-all-117-seats-in-2022-punjab-polls-7053726/)).
