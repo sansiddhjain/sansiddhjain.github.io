@@ -14,14 +14,20 @@ A small caveat - according to election commission data, the total number of vote
 
 ## Vote Shares
 
-Beyond columns C and D, the colours light red, light yellow, and light green correspond to ECI's definition of regional, state, and national parties respectively. Columns C and D correspond to the number of seats contested and won respectively. 
+The figures below show the vote share for every party. Columns C and D correspond to the number of seats contested and won respectively. However, we are really interested in the columns E & F. 
+
+Color scheme : The colors from column C and beyond are red, yellow, and green; and they correspond to ECI's definition of regional, state, and national parties respectively.
+
+If columns A & B are coloured, they indicate an alliance : Orange for NDA, Cyan for UPA, Purple for Mahagathbandhan and Sharp Red for Left Front.
 
 ![nda](https://sansiddhjain.github.io/photos/general-elections/nda.png)
-Vote share for NDA parties in descending order
+<p style="text-align: center;"> Figure 1: Vote share for NDA parties in descending order </p>
+
 ![upa](https://sansiddhjain.github.io/photos/general-elections/upa.png)
-Vote share for UPA parties in descending order
+<p style="text-align: center;"> Figure 2: Vote share for UPA parties in descending order </p>
+
 ![rest](https://sansiddhjain.github.io/photos/general-elections/rest.png)
-Vote share for other parties and independents in descending order
+<p style="text-align: center;"> Figure 3: Vote share for other parties and independents in descending order </p>
 
 ## Insights
 
